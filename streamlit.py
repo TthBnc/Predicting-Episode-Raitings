@@ -14,6 +14,11 @@ le = load('labelEncoder1.bin')
 ss = load('scaler_d.bin')
 
 def office_prediction(input_data):
+
+    input_Director_a = np.array([input_data[4]])
+    input_Director_a = le.transform(input_Director_a)
+    input_data[4] = input_Director_a[0]
+
     input_data = ss.transform(input_data)
 
     pred = loaded_model.predict(input_data)
@@ -45,11 +50,9 @@ if __name__ == '__main__':
     Duration = st.number_input('Duration of the episode', step=1, value=0)
     Director = st.selectbox("Director of the episode", options=Director_Options)
 
-    Director_a = np.array([Director])
-    Director_a = le.transform(Director_a)
-    Director = Director_a[0]
-    #input_data = np.array([[Season, Votes, Viewership, Duration]])
-     #prediction = office_prediction(input_data)
+    # Director_a = np.array([Director])
+    # Director_a = le.transform(Director_a)
+    # Director = Director_a[0]
     
     prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
     # prediction = round(prediction, 2)
