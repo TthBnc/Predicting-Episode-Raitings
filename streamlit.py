@@ -23,7 +23,7 @@ if __name__ == '__main__':
     st.title('Office Ratings Prediction')
 
     Season = 2
-    Votes = 3000
+    Votes = 5000
     Viewership = 6.7
     Duration = 23
 
