@@ -27,9 +27,7 @@ if __name__ == '__main__':
     Viewership = 2.0
     Duration = 23
 
-    prediction = 0
+    prediction = office_prediction([[Season, Votes, Viewership, Duration]])
 
     if st.button('Predict Episode Rating'):
-        prediction = office_prediction([[Season, Votes, Viewership, Duration]])
-
         st.success(f"Predicted rating of the episode: {prediction}")        
