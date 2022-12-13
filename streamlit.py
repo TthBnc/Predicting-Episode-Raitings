@@ -14,7 +14,7 @@ loaded_model = load_model('nn1.h5')
 def office_prediction(input_data):
     ss = load('scaler1.bin')
 
-    input_data = ss.fit_transform(input_data)
+    input_data = ss.transform(input_data)
 
     pred = loaded_model.predict(input_data)
 
