@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     Season = 2
     Votes = 5000
-    Viewership = 6.7
+    Viewership = 2.0
     Duration = 23
 
     prediction = 0
