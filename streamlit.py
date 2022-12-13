@@ -32,7 +32,8 @@ if __name__ == '__main__':
      #prediction = office_prediction(input_data)
     
     prediction = office_prediction([[Season, Votes, Viewership, Duration]])
-    prediction = round(prediction, 2)
+    # prediction = round(prediction, 2)
 
     if st.button('Predict Episode Rating'):
-        st.success(f"Predicted rating of the episode: {prediction}")        
+        #st.success(f"Predicted rating of the episode: {prediction}")
+        st.success("Prediction: %.1f" % prediction)        
