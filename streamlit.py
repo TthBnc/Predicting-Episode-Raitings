@@ -10,12 +10,13 @@ from joblib import load
 import streamlit as st
 
 loaded_model = load_model('nn1_d.h5')
+le = load('labelEncoder1.bin')
 
 def office_prediction(input_data):
     ss = load('scaler1.bin')
-    le = load('labelEncoder1.bin')
+    
 
-    input_data[0, 5] = le.transform(input_data[0, 5])
+    #input_data[0, 5] = le.transform(input_data[0, 5])
 
     input_data = ss.transform(input_data)
 
@@ -48,6 +49,7 @@ if __name__ == '__main__':
     Duration = st.number_input('Duration of the episode', step=1, value=0)
     Director = st.selectbox("Director of the episode", options=Director_Options)
 
+    Director = le.transform(Director)
     #input_data = np.array([[Season, Votes, Viewership, Duration]])
      #prediction = office_prediction(input_data)
     
