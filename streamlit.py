@@ -13,6 +13,9 @@ loaded_model = load_model('nn1_d.h5')
 
 def office_prediction(input_data):
     ss = load('scaler1.bin')
+    le = load('labelEncoder1.bin')
+
+    input_data.iloc[:, 5] = le.transform(input_data.iloc[:, 5])
 
     input_data = ss.transform(input_data)
 
