@@ -22,7 +22,7 @@ def office_prediction(input_data):
 if __name__ == '__main__':
     st.title('Office Ratings Prediction')
 
-    Season = 2
+    Season = st.slider('Season', min_value=1, max_value=9)
     Votes = 5000
     Viewership = 2.0
     Duration = 23
