@@ -14,16 +14,20 @@ le = load('labelEncoder1.bin')
 ss = load('scaler_d.bin')
 
 def office_prediction(input_data):
-
-    input_Director_a = np.array([input_data[4]])
-    input_Director_a = le.transform(input_Director_a)
-    input_data[4] = input_Director_a[0]
+    input_data = director_encoding(input_data=input_data)
 
     input_data = ss.transform(input_data)
 
     pred = loaded_model.predict(input_data)
 
     return pred[0,0]
+
+def director_encoding(input_data):
+    temp_array = np.array([input_data[0][4]])
+    temp_array = le.transform(temp_array)
+    input_data[0][4] = temp_array[0]
+
+    return input_data
 
 if __name__ == '__main__':
     st.title('Office Ratings Prediction')
