@@ -24,9 +24,9 @@ if __name__ == '__main__':
     st.title('Office Ratings Prediction')
 
     Season = st.slider('Season', min_value=1, max_value=9)
-    Votes = st.number_input('Number of votes', step=10)
-    Viewership = st.number_input('Viewership of the episode')
-    Duration = st.number_input('Duration of the episode', step=1)
+    Votes = st.number_input('Number of votes', step=100, value=0)
+    Viewership = st.number_input('Viewership of the episode', value=0.0)
+    Duration = st.number_input('Duration of the episode', step=1, value=0)
 
     #input_data = np.array([[Season, Votes, Viewership, Duration]])
      #prediction = office_prediction(input_data)
