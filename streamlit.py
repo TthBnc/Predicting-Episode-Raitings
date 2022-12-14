@@ -65,4 +65,4 @@ if __name__ == '__main__':
     if st.button('Predict Episode Rating'):
         prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
         st.success("Prediction: %.1f" % prediction)
-        st.video("https://www.youtube.com/watch?v=oXJvOJNUlCs")
+        st.markdown("https://tenor.com/view/thank-you-michael-scott-the-office-gif-15531895")
