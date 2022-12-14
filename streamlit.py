@@ -64,5 +64,4 @@ if __name__ == '__main__':
     #     st.success("Prediction: %.1f" % prediction)
     if st.button('Predict Episode Rating'):
         prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
-
-    st.success("Prediction: %.1f" % prediction)
+        st.success("Prediction: %.1f" % prediction)
