@@ -13,6 +13,8 @@ loaded_model = load_model('nn1_d.h5')
 le = load('labelEncoder1.bin')
 ss = load('scaler_d.bin')
 
+prediction = 0
+
 def office_prediction(input_data):
     input_data = director_encoding(input_data=input_data)
 
@@ -60,7 +62,6 @@ if __name__ == '__main__':
 
     # if st.button('Predict Episode Rating'):
     #     st.success("Prediction: %.1f" % prediction)
-    prediction = 0
     if st.button('Predict Episode Rating'):
         prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
 
