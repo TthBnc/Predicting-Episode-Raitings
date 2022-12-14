@@ -30,7 +30,7 @@ def director_encoding(input_data):
     return input_data
 
 if __name__ == '__main__':
-    st.title('Office Ratings Prediction')
+    st.title('Office Episode Rating Prediction')
 
     Director_Options = ['Ken Kwapis', 'Ken Whittingham', 'Bryan Gordon', 'Greg Daniels',
        'Amy Heckerling', 'Paul Feig', 'Charles McDougall',
@@ -54,13 +54,14 @@ if __name__ == '__main__':
     Duration = st.number_input('Duration of the episode', step=1, value=0)
     Director = st.selectbox("Director of the episode", options=Director_Options)
 
-    # Director_a = np.array([Director])
-    # Director_a = le.transform(Director_a)
-    # Director = Director_a[0]
-    
-    prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
-    # prediction = round(prediction, 2)
 
+    
+    # prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
+
+    # if st.button('Predict Episode Rating'):
+    #     st.success("Prediction: %.1f" % prediction)
+    prediction = 0
     if st.button('Predict Episode Rating'):
-        #st.success(f"Predicted rating of the episode: {prediction}")
-        st.success("Prediction: %.1f" % prediction)        
+        prediction = office_prediction([[Season, Votes, Viewership, Duration, Director]])
+
+    st.success("Prediction: %.1f" % prediction)
